@@ -5,6 +5,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+h1, h2 {
+  margin: 0;
+}
+
 .container {
   max-width: 1110px;
   margin: 0 auto;
@@ -55,7 +59,67 @@
 }
 
 .background {
-  display: none;
+  position: fixed;
+  width: 100%; 
+  height: 100%; 
+  top: 0; 
+  background-color: $main-color;
+  opacity: 0.5;
+}
+
+.popup {
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  width: 920px; 
+  min-height: 210px;
+  background-color: $white-color;
+  padding: 56px 95px;
+
+  &__title {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 120%;
+    color: $main-color;
+  }
+
+  &__paragraph {
+    font-weight: 300;
+    font-size: 16px;
+    color: $main-color;
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__close {
+    cursor: pointer; 
+    position: absolute; 
+    top: 40px; 
+    right: 40px;
+    height: 24px; 
+    width: 24px;
+    &:before {
+      content: ""; 
+      position: absolute; 
+      width: 12px; 
+      height: 2px; 
+      background-color: #000000;
+      border-radius: 20px;
+      transform: rotate(45deg);
+    }
+    &:after {
+      content: ""; 
+      position: absolute; 
+      width: 12px; 
+      height: 2px; 
+      background-color: #000000;
+      border-radius: 20px;
+      transform: rotate(-45deg);
+    }
+  }
+  
 }
 
 @import "media.scss";
