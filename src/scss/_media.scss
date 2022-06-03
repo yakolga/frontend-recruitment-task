@@ -26,6 +26,11 @@
       margin-bottom: 20px;
     }
   }
+
+  .popup {
+    min-width: 750px;
+  }
+
 }
 
 @media (max-width: 850px) {
@@ -46,11 +51,27 @@
       max-width: 480px;
     }
   }
+
+  .popup {
+    min-width: 630px;
+    padding: 46px 75px;
+    min-height: 180px;
+  }
 }
 
 @media (max-width: 640px) {
   .container {
     max-width: 450px;
+  }
+
+  .popup {
+    min-width: 520px;
+    padding: 36px 55px;
+    min-height: 160px;
+
+    &__paragraph {
+      margin-top: 10px;
+    }
   }
 }
 
@@ -72,6 +93,25 @@
 
     &__right {
       max-width: 200px;
+    }
+  }
+
+  .popup {
+    min-width: 300px;
+    padding: 36px 55px;
+    min-height: 140px;
+
+    &__title{
+      font-size: 32px;
+    }
+
+    &__close {
+      right: 20px; 
+      top: 20px;
+    }
+
+    &__paragraph {
+      font-size: 14px;
     }
   }
 }

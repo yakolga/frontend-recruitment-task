@@ -5,7 +5,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
-h1, h2 {
+h1, h2, p {
   margin: 0;
 }
 
@@ -72,10 +72,16 @@ h1, h2 {
   top: 50%; 
   left: 50%; 
   transform: translate(-50%, -50%);
-  width: 920px; 
+  min-width: 920px; 
   min-height: 210px;
   background-color: $white-color;
   padding: 56px 95px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
   &__title {
     font-weight: 700;
@@ -88,6 +94,7 @@ h1, h2 {
     font-weight: 300;
     font-size: 16px;
     color: $main-color;
+    margin-top: 24px;
     span {
       font-weight: 700;
     }
@@ -98,25 +105,27 @@ h1, h2 {
     position: absolute; 
     top: 40px; 
     right: 40px;
-    height: 24px; 
-    width: 24px;
+    height: 25px; 
+    width: 25px;
     &:before {
       content: ""; 
       position: absolute; 
-      width: 12px; 
+      width: 17px; 
       height: 2px; 
       background-color: #000000;
       border-radius: 20px;
       transform: rotate(45deg);
+      margin-top: 8px;
     }
     &:after {
       content: ""; 
       position: absolute; 
-      width: 12px; 
+      width: 17px; 
       height: 2px; 
       background-color: #000000;
       border-radius: 20px;
       transform: rotate(-45deg);
+      margin-top: 8px;
     }
   }
   
