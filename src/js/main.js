@@ -4,11 +4,9 @@ window.addEventListener('DOMContentLoaded', function() {
   
   //popup open/close 
 
-  const background = document.querySelector('.background'), 
-        popupWindow = document.querySelector('.popup'), 
+  const background = document.querySelector('.background'),  
         popupClose = document.querySelector('.popup__close'), 
         buttonMain = document.querySelector('#add');
-
 
   function openPopup() {
     background.classList.add('open'); 
@@ -35,6 +33,7 @@ window.addEventListener('DOMContentLoaded', function() {
   // counter
   
   let count;
+  
   if (localStorage.getItem('counter')) {
     count = localStorage.getItem('counter');
   } else {
@@ -44,22 +43,26 @@ window.addEventListener('DOMContentLoaded', function() {
   const resetButton = document.querySelector('#reset'), 
         popupText = document.querySelector('.popup__paragraph');
 
-    buttonMain.onclick = function() {
-      count++;
-      localStorage.setItem('counter', count);
+    function counter(buttonAdd, buttonReset) {
+      buttonAdd.addEventListener('click', () => {
+        count++;
+        localStorage.setItem('counter', count);
 
       
-      if (count === 1) {
-        popupText.innerHTML = `You have clicked ${localStorage.getItem('counter')} time to related button.`;
-      } else {
-        popupText.innerHTML = `You have clicked ${localStorage.getItem('counter')} times to related button.`;
-      }
+        if (count === 1) {
+          popupText.innerHTML = `You have clicked ${localStorage.getItem('counter')} time to related button.`;
+        } else {
+          popupText.innerHTML = `You have clicked ${localStorage.getItem('counter')} times to related button.`;
+        }
 
-      if  (count >= 5) {
-        resetButton.classList.add('open');
-        resetButton.classList.remove('hide');
-      }
-    };
+        if  (count >= 5) {
+          buttonReset.classList.add('open');
+          buttonReset.classList.remove('hide');
+        }
+      });
+    }
+
+    counter(buttonMain, resetButton);
 
     function resetCounter() {
       count = 0;
